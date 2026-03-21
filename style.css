@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  /* coloca a margem de todos os elementos pra 0, o * é um seletor universal, inclui tudo */
+  padding: 0; /*preenchimento interno de uma caixa*/
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/mobile-dark.png);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --righlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/mobile-light.png);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(255, 255, 255, 0.05);
+  --righlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/sun.svg);
+}
+
+body {
+  /*background-image: url(./assets/bg-mobile.jpg); /*pegou a imagem da pasta do computador
+  background-repeat: no-repeat; colocou a imagem para não repetir
+  background-position: top center; deixou a imagem centralizada com o seu topo no eixo y
+  background-size: cover; cobriu toda a pagina com a imagem */
+
+  /*Background: ordem -> color image repeat position/size*/
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+  width: 360px;
+  margin: auto; /*centraliza a caixa do container*/
+  padding: 0 24px;
+}
+
+/*profile*/
+
+#profile {
+  text-align: center; /*é como o pai do img para alinhar ele, pois ele não aceita tipo block*/
+  padding: 24px;
+}
+
+#profile img {
+  width: 112px;
+}
+#profile p {
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  margin-top: 8px;
+}
+
+/*switch*/
+
+#switch{
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+  /*Para mudar o dark p light*/
+}
+
+#switch span{
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px); 
+  border-radius: 9999px;
+}
+
+/* links */
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 24px 0;
+}
+
+ul li a {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 16px 24px;
+
+  background: var(--surface-color);
+  border: solid 1px var(--stroke-color);
+  border-radius: 8px; /*é o arredondamento da borda*/
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: background 0.3s; /*transição do fundo pro hover p ficar suave*/
+}
+
+/* pseudo-selector (quando passa o mouse e cima) */
+
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: solid 1px var(--text-color);
+}
+
+/* social links  */
+#social-links {
+  display: flex; /*o gap só libera com o display*/
+  justify-content: center;
+
+  padding: 24px 0;
+  font-size: 24px;
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* alinhar o icon na bolinha transparente */
+  padding: 16px;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+#social-links a:hover {
+  background: var(--righlight-color);
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+}
