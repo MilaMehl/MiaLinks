@@ -36,7 +36,7 @@ Este projeto foi construído utilizando as seguintes ferramentas e linguagens:
 O **MiaLinks** é uma aplicação prática de um cartão de visitas online, onde o usuário pode centralizar todos os seus links importantes (redes sociais, portfólio, contatos) em uma única interface limpa e adaptável a diferentes dispositivos.
 
 > [!TIP]
-> **[Acesse o projeto online aqui](SUO-LINK-DO-GITHUB-PAGES-AQUI)**
+> **[Acesse o projeto online aqui](https://milamehl.github.io/MiaLinks/)**
 
 ## 🔖 Layout
 
