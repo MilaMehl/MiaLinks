@@ -33,6 +33,7 @@ body {
 
   /*Background: ordem -> color image repeat position/size*/
   background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh; /*para se adaptar a todos os tipos de telas e dispositivos: completar a tela com a imagem*/
 }
 
 body * {
@@ -166,4 +167,16 @@ footer {
   padding: 24px 0;
   text-align: center;
   font-size: 14px;
+}
+
+/* Media Queries */
+@media(min-width: 700px) {
+  /*De 700px para cima faça essas instruções*/
+  :root {
+    --bg-url: url(./assets/desktop-wp.jpg);
+  }
+
+  .light {
+    --bg-url: url(./assets/desktop-wp-light.jpg);
+  }
 }
